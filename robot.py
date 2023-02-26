@@ -80,3 +80,6 @@ class Robot:
 
     def run_line_maze_arena(self):
         pass
+
+    def run_elevated_arena(self):
+        line_follow(stop_color='Blue')
