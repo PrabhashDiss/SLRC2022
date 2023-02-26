@@ -48,6 +48,14 @@ class Robot:
         self.left_motor.stop()
         self.right_motor.stop()
 
+    def stop(self, stop_color):
+        '''
+        Stop the robot when stop_color is detected
+        '''
+        color = self.colour_sensor.detects_colour()
+        if color == stop_color:
+            self.stop()
+
     def reverse(self):
         self.left_motor.move_backward(70)
         self.right_motor.move_backward(70)
