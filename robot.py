@@ -22,6 +22,20 @@ class Robot:
         right_IR3 = IRSensor(1)
         right_IR4 = IRSensor(1)
 
+    def turn_left(self):
+        self.left_motor.move_backward(70)
+        self.right_motor.move_forward(70)
+        time.sleep(1.5)
+        self.left_motor.stop()
+        self.right_motor.stop()
+
+    def turn_right(self):
+        self.left_motor.move_forward(70)
+        self.right_motor.move_backward(70)
+        time.sleep(1.5)
+        self.left_motor.stop()
+        self.right_motor.stop()
+
     def reverse(self):
         self.left_motor.move_backward(70)
         self.right_motor.move_backward(70)
