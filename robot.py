@@ -71,11 +71,9 @@ class Robot:
                 self.right_motor.move_backward(speed)
             else:
                 if color == go_color:
-                    self.left_motor.move_forward(speed)
-                    self.right_motor.move_forward(speed)
+                    self.move_forward(speed)
                 elif color == stop_color:
-                    self.left_motor.stop()
-                    self.right_motor.stop()
+                    self.stop()
                     break
                 elif color == reverse_color:
                     self.reverse()
