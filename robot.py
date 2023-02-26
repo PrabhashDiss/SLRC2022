@@ -70,8 +70,6 @@ class Robot:
                 self.left_motor.move_forward(speed)
                 self.right_motor.move_backward(speed)
             else:
-                self.left_motor.move_forward(speed)
-                self.right_motor.move_forward(speed)
                 if color == go_color:
                     self.left_motor.move_forward(speed)
                     self.right_motor.move_forward(speed)
