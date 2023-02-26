@@ -77,3 +77,6 @@ class Robot:
                     break
                 elif color == reverse_color:
                     self.reverse()
+
+    def run_line_maze_arena(self):
+        pass
