@@ -89,5 +89,56 @@ class Robot:
     def run_line_maze_arena(self):
         pass
 
+    def run_cave_arena(self):
+        # read sensor values
+        color = self.colour_sensor.detects_colour()
+
+        # Move forward 13 cm
+        robot.move_forward(80)
+        time.sleep(0.5)
+        robot.stop()
+
+        # Turn left
+        robot.turn_left()
+
+        # Check for barriers
+        while True:
+            # Move forward
+            robot.move_forward(80)
+
+            front_dist = robot.front_dist_sensor.get_distance()
+            if front_dist < 15:
+                robot.stop()
+                # Avoid barrier by turning right
+                robot.turn_right()
+                robot.move_forward(80)
+                time.sleep(0.5)
+                robot.turn_left()
+                # Check for barriers again
+                while True:
+                    # Move forward
+                    robot.move_forward(80)
+
+                    front_dist = robot.front_dist_sensor.get_distance()
+                    if front_dist < 15:
+                        robot.stop()
+                        # Avoid barrier by turning left
+                        robot.turn_left()
+                        robot.move_forward(80)
+                        time.sleep(0.5)
+                        robot.turn_right()
+
+                    # Check for finish line
+                    color = robot.colour_sensor.detects_colour()
+                    if color == 'White':
+                        robot.stop()
+                        break
+
+            # Check for finish line
+            color = robot.colour_sensor.detects_colour()
+            if color == 'White':
+                robot.stop()
+                break
+
     def run_elevated_arena(self):
         line_follow(stop_color='Blue')
