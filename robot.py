@@ -132,5 +132,144 @@ class Robot:
                 robot.stop()
                 break
 
+    def run_7_segment_number_constructing_arena(self):
+        def identify_number():
+            # Move 35cm forward
+            robot.move_forward(80)
+            time.sleep(0.5)
+            robot.stop()
+            # Check for barrier
+            front_dist = robot.front_dist_sensor.get_distance()
+            if front_dist < 20:
+                # Turn left
+                robot.turn_left()
+                # Check for barrier
+                front_dist = robot.front_dist_sensor.get_distance()
+                if front_dist < 20:
+                    # Reverse
+                    robot.reverse()
+                    # Check for barrier
+                    front_dist = robot.front_dist_sensor.get_distance()
+                    if front_dist < 20:
+                        # Turn right
+                        robot.turn_right()
+                        # Move 35cm forward
+                        robot.move_forward(80)
+                        time.sleep(0.5)
+                        robot.stop()
+                        # Turn left
+                        robot.turn_left()
+                        # Move 70cm forward
+                        robot.move_forward(80)
+                        time.sleep(0.5)
+                        robot.stop()
+                        # Turn left
+                        robot.turn_left()
+                        # Move 70cm forward
+                        robot.move_forward(80)
+                        time.sleep(0.5)
+                        robot.stop()
+                        # Turn left
+                        robot.turn_left()
+                        # Move 35cm forward
+                        robot.move_forward(80)
+                        time.sleep(0.5)
+                        robot.stop()
+                        # Check for barrier
+                        front_dist = robot.front_dist_sensor.get_distance()
+                        if front_dist < 20:
+                            # Turn left
+                            robot.turn_left()
+                            # Check for barrier
+                            front_dist = robot.front_dist_sensor.get_distance()
+                            if front_dist < 20:
+                                # Reverse
+                                robot.reverse()
+                                # Move 35cm forward
+                                robot.move_forward(80)
+                                time.sleep(0.5)
+                                robot.stop()
+                                # Turn left
+                                robot.turn_left()
+                                # Move 70cm forward
+                                robot.move_forward(80)
+                                time.sleep(0.5)
+                                robot.stop()
+                                # Turn left
+                                robot.turn_left()
+                                # Move 35cm forward
+                                robot.move_forward(80)
+                                time.sleep(0.5)
+                                robot.stop()
+                                # Turn left
+                                robot.turn_left()
+                                # Check for barrier
+                                front_dist = robot.front_dist_sensor.get_distance()
+                                if front_dist < 20:
+                                    return 8
+                                else:
+                                    return 9
+                            else:
+                                return 4
+                        else:
+                            return 3
+                    else:
+                        # Move 70cm forward
+                        robot.move_forward(80)
+                        time.sleep(0.5)
+                        robot.stop()
+                        # Turn left
+                        robot.turn_left()
+                        # Move 70cm forward
+                        robot.move_forward(80)
+                        time.sleep(0.5)
+                        robot.stop()
+                        # Turn left
+                        robot.turn_left()
+                        # Move 70cm forward
+                        robot.move_forward(80)
+                        time.sleep(0.5)
+                        robot.stop()
+                        # Turn left
+                        robot.turn_left()
+                        # Move 35cm forward
+                        robot.move_forward(80)
+                        time.sleep(0.5)
+                        robot.stop()
+                        # Turn right
+                        robot.turn_right()
+                        # Check for barrier
+                        front_dist = robot.front_dist_sensor.get_distance()
+                        if front_dist < 20:
+                            return 6
+                        else:
+                            return 5
+                else:
+                    return 2
+            else:
+                # Move 35cm forward
+                robot.move_forward(80)
+                time.sleep(0.5)
+                robot.stop()
+                # Turn right
+                robot.turn_right()
+                # Check for barrier
+                front_dist = robot.front_dist_sensor.get_distance()
+                if front_dist < 20:
+                    return 0
+                else:
+                    # Move 35cm forward
+                    robot.move_forward(80)
+                    time.sleep(0.5)
+                    robot.stop()
+                    # Turn right
+                    robot.turn_right()
+                    # Check for barrier
+                    front_dist = robot.front_dist_sensor.get_distance()
+                    if front_dist < 20:
+                        return 7
+                    else:
+                        return 1
+
     def run_elevated_arena(self):
         line_follow(stop_color='Blue')
