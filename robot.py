@@ -55,7 +55,7 @@ class Robot:
         self.left_motor.stop()
         self.right_motor.stop()
 
-    def line_follow(self, speed=80, go_color='White', stop_color='Red', optional_stop_color='Green'):
+    def line_follow(self, speed=80, go_color='White', stop_color='Red', reverse_color='Green'):
         while True:
             # read sensor values
             left_value = self.left_IR3.detects_black()
