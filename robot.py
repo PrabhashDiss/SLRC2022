@@ -356,7 +356,7 @@ class Robot:
                         return 1
 
             self.reverse()
-            undo_actions(actions)
+            self.undo_actions(actions)
             self.reverse()
 
     def run_elevated_arena(self):
