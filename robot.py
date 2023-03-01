@@ -406,5 +406,9 @@ class Robot:
                     self.undo_actions(actions)
                     self.reverse()
 
+        checkAvailability_boxes()
+        identify_number()
+        build_number()
+
     def run_elevated_arena(self):
         line_follow(stop_color='Blue')
