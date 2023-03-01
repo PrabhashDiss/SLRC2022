@@ -91,9 +91,7 @@ class Robot:
         color = self.colour_sensor.detects_colour()
 
         # Move forward 13 cm
-        robot.move_forward(80)
-        time.sleep(0.5)
-        robot.stop()
+        self.move_forward_distance(80, 13)
 
         # Turn left
         robot.turn_left()
