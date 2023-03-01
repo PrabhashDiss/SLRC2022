@@ -154,6 +154,14 @@ class Robot:
                 break
 
     def run_7_segment_number_constructing_arena(self):
+        '''
+          b _
+         a | | c
+          e _
+         d | | f
+          g _
+        '''
+
         actions = []
 
         def identify_number():
