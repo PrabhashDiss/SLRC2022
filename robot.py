@@ -194,6 +194,11 @@ class Robot:
         3 4 5
         '''
         BoxesPaths = {
+            1: [("turn_right", None), ("move_forward", 70), ("turn_right", None)],
+            2: [("turn_right", None), ("move_forward", 35), ("turn_right", None)],
+            3: [("turn_left", None), ("move_forward", 70), ("turn_right", None), ("move_forward", 105), ("turn_left", None)],
+            4: [("turn_left", None), ("move_forward", 70), ("turn_right", None), ("move_forward", 70), ("turn_left", None)],
+            5: [("turn_left", None), ("move_forward", 70), ("turn_right", None), ("move_forward", 35), ("turn_left", None)]
         }
 
         actions = []
