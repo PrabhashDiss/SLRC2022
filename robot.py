@@ -377,8 +377,8 @@ class Robot:
             prev_number_edges = NumbersEdges[prev_number]
             next_number = 7
             next_number_edges = NumbersEdges[next_number]
-            for i in range(7):
-                if not(prev_number_edges[i]) and next_number_edges[i]:
+            for i in range(ord('a'), ord('g')+1):
+                if not(prev_number_edges[chr(i)]) and next_number_edges[chr(i)]:
                     for action in BoxesPaths[boxes_availability.index(True)]:
                         self.do_action(action[0], action[1])
                         actions.append(action)
@@ -386,14 +386,14 @@ class Robot:
                     self.reverse()
                     self.undo_actions(actions)
                     self.reverse()
-                    for action in NumberPaths[i]:
+                    for action in NumberPaths[chr(i)]:
                         self.do_action(action[0], action[1])
                         actions.append(action)
                     self.reverse()
                     self.undo_actions(actions)
                     self.reverse()
-                if prev_number_edges[i] and not(next_number_edges[i]):
-                    for action in NumberPaths[i]:
+                if prev_number_edges[chr(i)] and not(next_number_edges[chr(i)]):
+                    for action in NumberPaths[chr(i)]:
                         self.do_action(action[0], action[1])
                         actions.append(action)
                     self.reverse()
