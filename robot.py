@@ -372,5 +372,8 @@ class Robot:
             self.undo_actions(actions)
             self.reverse()
 
+        def build_number():
+            pass
+
     def run_elevated_arena(self):
         line_follow(stop_color='Blue')
