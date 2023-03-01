@@ -344,5 +344,8 @@ class Robot:
                     else:
                         return 1
 
+            self.reverse()
+            undo_actions(actions)
+
     def run_elevated_arena(self):
         line_follow(stop_color='Blue')
