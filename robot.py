@@ -154,60 +154,81 @@ class Robot:
                 break
 
     def run_7_segment_number_constructing_arena(self):
+        actions = []
+
         def identify_number():
             # Move 35cm forward
             self.move_forward_distance(80, 35)
+            actions.append(('move_forward', 35))
             # Check for barrier
             front_dist = robot.front_dist_sensor.get_distance()
             if front_dist < 20:
                 # Turn left
                 robot.turn_left()
+                moves.append(('turn_left', None))
                 # Check for barrier
                 front_dist = robot.front_dist_sensor.get_distance()
                 if front_dist < 20:
                     # Reverse
                     robot.reverse()
+                    moves.append(('reverse', None))
                     # Check for barrier
                     front_dist = robot.front_dist_sensor.get_distance()
                     if front_dist < 20:
                         # Turn right
                         robot.turn_right()
+                        moves.append(('turn_right', None))
                         # Move 35cm forward
                         self.move_forward_distance(80, 35)
+                        actions.append(('move_forward', 35))
                         # Turn left
                         robot.turn_left()
+                        actions.append(('turn_left', None))
                         # Move 70cm forward
                         self.move_forward_distance(80, 70)
+                        actions.append(('move_forward', 70))
                         # Turn left
                         robot.turn_left()
+                        actions.append(('turn_left', None))
                         # Move 70cm forward
                         self.move_forward_distance(80, 70)
+                        actions.append(('move_forward', 70))
                         # Turn left
                         robot.turn_left()
+                        actions.append(('turn_left', None))
                         # Move 35cm forward
                         self.move_forward_distance(80, 35)
+                        actions.append(('move_forward', 35))
                         # Check for barrier
                         front_dist = robot.front_dist_sensor.get_distance()
                         if front_dist < 20:
                             # Turn left
                             robot.turn_left()
+                            actions.append(('turn_left', None))
                             # Check for barrier
                             front_dist = robot.front_dist_sensor.get_distance()
                             if front_dist < 20:
                                 # Reverse
                                 robot.reverse()
+                                actions.append(('reverse', None))
                                 # Move 35cm forward
                                 self.move_forward_distance(80, 35)
+                                actions.append(('move_forward', 35))
                                 # Turn left
                                 robot.turn_left()
+                                actions.append(('turn_left', None))
                                 # Move 70cm forward
                                 self.move_forward_distance(80, 70)
+                                actions.append(('move_forward', 70))
                                 # Turn left
                                 robot.turn_left()
+                                actions.append(('turn_left', None))
                                 # Move 35cm forward
                                 self.move_forward_distance(80, 35)
+                                actions.append(('move_forward', 35))
                                 # Turn left
                                 robot.turn_left()
+                                actions.append(('turn_left', None))
                                 # Check for barrier
                                 front_dist = robot.front_dist_sensor.get_distance()
                                 if front_dist < 20:
@@ -221,20 +242,28 @@ class Robot:
                     else:
                         # Move 70cm forward
                         self.move_forward_distance(80, 70)
+                        actions.append(('move_forward', 70))
                         # Turn left
                         robot.turn_left()
+                        actions.append(('turn_left', None))
                         # Move 70cm forward
                         self.move_forward_distance(80, 70)
+                        actions.append(('move_forward', 70))
                         # Turn left
                         robot.turn_left()
+                        actions.append(('turn_left', None))
                         # Move 70cm forward
                         self.move_forward_distance(80, 70)
+                        actions.append(('move_forward', 70))
                         # Turn left
                         robot.turn_left()
+                        actions.append(('turn_left', None))
                         # Move 35cm forward
                         self.move_forward_distance(80, 35)
+                        actions.append(('move_forward', 35))
                         # Turn right
                         robot.turn_right()
+                        actions.append(('turn_right', None))
                         # Check for barrier
                         front_dist = robot.front_dist_sensor.get_distance()
                         if front_dist < 20:
@@ -246,8 +275,10 @@ class Robot:
             else:
                 # Move 35cm forward
                 self.move_forward_distance(80, 35)
+                actions.append(('move_forward', 35))
                 # Turn right
                 robot.turn_right()
+                actions.append(('turn_right', None))
                 # Check for barrier
                 front_dist = robot.front_dist_sensor.get_distance()
                 if front_dist < 20:
@@ -255,8 +286,10 @@ class Robot:
                 else:
                     # Move 35cm forward
                     self.move_forward_distance(80, 35)
+                    actions.append(('move_forward', 35))
                     # Turn right
                     robot.turn_right()
+                    actions.append(('turn_right', None))
                     # Check for barrier
                     front_dist = robot.front_dist_sensor.get_distance()
                     if front_dist < 20:
