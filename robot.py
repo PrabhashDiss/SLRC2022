@@ -178,7 +178,7 @@ class Robot:
          d | | f
           g _
         '''
-        paths = {
+        NumberPaths = {
             'a': [("turn_right", None), ("move_forward", 70), ("turn_left", None), ("move_forward", 70), ("turn_left", None), ("move_forward", 35)],
             'b': [("turn_right", None), ("move_forward", 35), ("turn_left", None), ("move_forward", 35)],
             'c': [("move_forward", 35), ("turn_right", None)],
