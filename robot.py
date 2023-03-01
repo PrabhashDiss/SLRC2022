@@ -212,7 +212,8 @@ class Robot:
             self.undo_actions(actions)
             self.reverse()
         def checkAvailability_boxes():
-            pass
+            for i in range(1, 6):
+                checkAvailability_box(i)
 
         def identify_number():
             # Move 35cm forward
