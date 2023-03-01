@@ -161,6 +161,15 @@ class Robot:
          d | | f
           g _
         '''
+        paths = {
+            'a': [("turn_right", None), ("move_forward", 70), ("turn_left", None), ("move_forward", 70), ("turn_left", None), ("move_forward", 35)],
+            'b': [("turn_right", None), ("move_forward", 35), ("turn_left", None), ("move_forward", 35)],
+            'c': [("move_forward", 35), ("turn_right", None)],
+            'd': [("turn_right", None), ("move_forward", 70), ("turn_left", None), ("move_forward", 105), ("turn_left", None), ("move_forward", 70), ("turn_left", None), ("move_forward", 35), ("turn_right", None)],
+            'e': [("move_forward", 35)],
+            'f': [("move_forward", 35), ("turn_left", None)],
+            'g': [("turn_left", None), ('move_forward', 35), ("turn_right", None), ("move_forward", 35)]
+        }
 
         actions = []
 
