@@ -60,6 +60,16 @@ class Robot:
         self.left_motor.stop()
         self.right_motor.stop()
 
+    def undo_action(self, action, distance=0):
+        if action == 'move_forward':
+            self.move_forward_distance(80, distance)
+        elif action == 'turn_left':
+            self.turn_right()
+        elif action == 'turn_right':
+            self.turn_left()
+        elif action == 'reverse':
+            self.reverse()
+
     def line_follow(self, speed=80, go_color='White', stop_color='Red', reverse_color='Green'):
         while True:
             # read sensor values
