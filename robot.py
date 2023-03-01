@@ -205,7 +205,12 @@ class Robot:
 
         boxes_availability = [False, False, False, False, False]
         def checkAvailability_box(box_number):
-            pass
+            for action in BoxesPaths[box_number]:
+                self.do_action(action[0], action[1])
+                actions.append(action)
+            self.reverse()
+            self.undo_actions(actions)
+            self.reverse()
         def checkAvailability_boxes():
             pass
 
