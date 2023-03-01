@@ -70,6 +70,14 @@ class Robot:
         elif action == 'reverse':
             self.reverse()
 
+    def undo_actions(robot, actions):
+        while actions:
+            action = moves.pop()
+            if action[0] == 'move_forward':
+                robot.undo_action(action[0], action[1])
+            else:
+                robot.undo_action(action[0])
+
     def line_follow(self, speed=80, go_color='White', stop_color='Red', reverse_color='Green'):
         while True:
             # read sensor values
