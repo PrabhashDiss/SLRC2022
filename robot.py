@@ -60,6 +60,23 @@ class Robot:
         self.left_motor.stop()
         self.right_motor.stop()
 
+    def do_action(self, action, distance=0):
+        if action == 'move_forward':
+            self.move_forward_distance(80, distance)
+        elif action == 'turn_left':
+            self.turn_left()
+        elif action == 'turn_right':
+            self.turn_right()
+        elif action == 'reverse':
+            self.reverse()
+
+    def do_actions(self, actions):
+        for action in actions:
+            if action[0] == 'move_forward':
+                self.do_action(action[0], action[1])
+            else:
+                self.do_action(action[0])
+
     def undo_action(self, action, distance=0):
         if action == 'move_forward':
             self.move_forward_distance(80, distance)
