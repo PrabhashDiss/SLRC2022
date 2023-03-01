@@ -203,6 +203,12 @@ class Robot:
 
         actions = []
 
+        boxes_availability = [False, False, False, False, False]
+        def checkAvailability_box(box_number):
+            pass
+        def checkAvailability_boxes():
+            pass
+
         def identify_number():
             # Move 35cm forward
             self.move_forward_distance(80, 35)
