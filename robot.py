@@ -373,7 +373,38 @@ class Robot:
             self.reverse()
 
         def build_number():
-            pass
+            prev_number = identify_number()
+            prev_number_edges = NumbersEdges[prev_number]
+            next_number = 7
+            next_number_edges = NumbersEdges[next_number]
+            for i in range(7):
+                if not(prev_number_edges[i]) and next_number_edges[i]:
+                    for action in BoxesPaths[boxes_availability.index(True)]:
+                        self.do_action(action[0], action[1])
+                        actions.append(action)
+                    boxes_availability[boxes_availability.index(True)] = False
+                    self.reverse()
+                    self.undo_actions(actions)
+                    self.reverse()
+                    for action in NumberPaths[i]:
+                        self.do_action(action[0], action[1])
+                        actions.append(action)
+                    self.reverse()
+                    self.undo_actions(actions)
+                    self.reverse()
+                if prev_number_edges[i] and not(next_number_edges[i]):
+                    for action in NumberPaths[i]:
+                        self.do_action(action[0], action[1])
+                        actions.append(action)
+                    self.reverse()
+                    self.undo_actions(actions)
+                    self.reverse()
+                    for action in BoxesPaths[boxes_availability.index(False)]:
+                        self.do_action(action[0], action[1])
+                        actions.append(action)
+                    self.reverse()
+                    self.undo_actions(actions)
+                    self.reverse()
 
     def run_elevated_arena(self):
         line_follow(stop_color='Blue')
