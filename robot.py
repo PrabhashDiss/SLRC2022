@@ -188,6 +188,14 @@ class Robot:
             'g': [("turn_left", None), ('move_forward', 35), ("turn_right", None), ("move_forward", 35)]
         }
 
+        '''
+                1
+                2
+        3 4 5
+        '''
+        BoxesPaths = {
+        }
+
         actions = []
 
         def identify_number():
