@@ -26,10 +26,10 @@ class Robot:
         self.left_motor.move_forward(speed)
         self.right_motor.move_forward(speed)
 
-    def move_forward_distance(robot, speed, distance):
-        robot.move_forward(80)
+    def move_forward_distance(self, speed, distance):
+        self.move_forward(80)
         time.sleep(0.5)
-        robot.stop()
+        self.stop()
 
     def move_backward(self, speed):
         self.left_motor.move_backward(speed)
