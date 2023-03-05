@@ -237,19 +237,19 @@ class Robot:
             if front_dist < 20:
                 # Turn left
                 self.turn_left()
-                moves.append(('turn_left', None))
+                actions.append(('turn_left', None))
                 # Check for barrier
                 front_dist = self.front_dist_sensor.get_distance()
                 if front_dist < 20:
                     # Reverse
                     self.reverse()
-                    moves.append(('reverse', None))
+                    actions.append(('reverse', None))
                     # Check for barrier
                     front_dist = self.front_dist_sensor.get_distance()
                     if front_dist < 20:
                         # Turn right
                         self.turn_right()
-                        moves.append(('turn_right', None))
+                        actions.append(('turn_right', None))
                         # Move 35cm forward
                         self.move_forward_distance(80, 35)
                         actions.append(('move_forward', 35))
