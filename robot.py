@@ -103,10 +103,10 @@ class Robot:
             color = self.colour_sensor.detects_colour()
 
             # adjust motors based on sensor values
-            elif not left_value and right_value:
+            if not left_value and right_value:
                 self.left_motor.move_backward(speed)
                 self.right_motor.move_forward(speed)
-            if left_value and not right_value:
+            elif left_value and not right_value:
                 self.left_motor.move_forward(speed)
                 self.right_motor.move_backward(speed)
             else:
