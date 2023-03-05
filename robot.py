@@ -130,45 +130,45 @@ class Robot:
         self.move_forward_distance(80, 13)
 
         # Turn left
-        robot.turn_left()
+        self.turn_left()
 
         # Check for barriers
         while True:
             # Move forward
-            robot.move_forward(80)
+            self.move_forward(80)
 
-            front_dist = robot.front_dist_sensor.get_distance()
+            front_dist = self.front_dist_sensor.get_distance()
             if front_dist < 15:
-                robot.stop()
+                self.stop()
                 # Avoid barrier by turning right
-                robot.turn_right()
-                robot.move_forward(80)
+                self.turn_right()
+                self.move_forward(80)
                 time.sleep(0.5)
-                robot.turn_left()
+                self.turn_left()
                 # Check for barriers again
                 while True:
                     # Move forward
-                    robot.move_forward(80)
+                    self.move_forward(80)
 
-                    front_dist = robot.front_dist_sensor.get_distance()
+                    front_dist = self.front_dist_sensor.get_distance()
                     if front_dist < 15:
-                        robot.stop()
+                        self.stop()
                         # Avoid barrier by turning left
-                        robot.turn_left()
-                        robot.move_forward(80)
+                        self.turn_left()
+                        self.move_forward(80)
                         time.sleep(0.5)
-                        robot.turn_right()
+                        self.turn_right()
 
                     # Check for finish line
-                    color = robot.colour_sensor.detects_colour()
+                    color = self.colour_sensor.detects_colour()
                     if color == 'White':
-                        robot.stop()
+                        self.stop()
                         break
 
             # Check for finish line
-            color = robot.colour_sensor.detects_colour()
+            color = self.colour_sensor.detects_colour()
             if color == 'White':
-                robot.stop()
+                self.stop()
                 break
 
     def run_7_segment_number_constructing_arena(self):
