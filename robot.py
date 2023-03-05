@@ -1,4 +1,5 @@
 from components import *
+import time
 
 class Robot:
     def __init__(self):
