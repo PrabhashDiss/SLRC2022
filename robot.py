@@ -412,4 +412,4 @@ class Robot:
         build_number()
 
     def run_elevated_arena(self):
-        line_follow(stop_color='Blue')
+        self.line_follow(stop_color='Blue')
