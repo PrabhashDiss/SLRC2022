@@ -90,7 +90,7 @@ class Robot:
 
     def undo_actions(self, actions):
         while actions:
-            action = moves.pop()
+            action = actions.pop()
             if action[0] == 'move_forward':
                 self.undo_action(action[0], action[1])
             else:
